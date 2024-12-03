@@ -1,0 +1,8 @@
+// JSONC is JSON with Comments
+// cool this exists!
+
+{
+    "block question" : "According to all known laws of _, there is no way a _, should be able to _.", // every "_" is a gap which contains an empty recepticle for a block
+    "block answer" : ["aviation", "bee", "fly"], // blocks in correct order
+    "blocks" : ["fly", "aviation", "bee"] // blocks in an incorrect order
+}
