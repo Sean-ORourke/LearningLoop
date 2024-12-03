@@ -1,0 +1,7 @@
+// JSONC is JSON with Comments
+// cool this exists!
+
+// maybe we can pull a name from here to show in the results screen? <- STRETCH GOAL
+{
+    "name": "Liam"
+}
