@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="game_view.css"> <!-- May combine the CSS files into one later on, but for now I believe they should be different enough to be seprate files -->
-
+    <script type="text/javascript" src="box_game.js"></script>
     <title>Game View</title>
 
 </head>
@@ -30,6 +30,18 @@
             padding: 10px;
             margin: 5px;
         }
+
+        .empty-box{
+            display: inline-block;
+            justify-content: space-around;
+            border: solid black;
+            background-color: white;
+            border-width: 5px;
+            margin: 5px;
+            height: 35px;
+            width: 200px;
+        }
+
     </style>
 
     <h1>Game View</h1>
@@ -49,12 +61,12 @@
     </div>
 
 
-    <p>String str = "______________";</p>
-    <p>System.out._______________(str);</p>
-    <p>_________ x = 15;</p>
-    <p>if(_________) { //Note: We want this to be TRUE</p>
+    <p>String str = <span class="empty-box" ></span> ;</p>
+    <p>System.out.<span class="empty-box" ></span>(str);</p>
+    <p><span class="empty-box" ></span> x = 15;</p>
+    <p>if(<span class="empty-box" ></span>) { //Note: We want this to be TRUE</p>
     <p>System.out.println("Hello to you too");</p>
-    <p>_______</p>
+    <p><span class="empty-box" ></span></p>
 
 
     <a href="student_summary.html">I'm finished, go to Results Screen!</a>
