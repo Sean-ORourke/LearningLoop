@@ -65,7 +65,14 @@
 
     <p>An example output for line three is shown below</p>
     
-    <code style="background-color: rgb(230, 230, 230);">one<br>two<br>three<br>four<br>five</code>
+    <div style="background-color: rgb(230, 230, 230); width: 300px;">
+      Line split by delimeter:<br>
+      one<br>
+      two<br>
+      three<br>
+      four<br>
+      five
+    </div>
 
     <h3>Code</h3>
 
@@ -90,6 +97,15 @@ public class App {
 
       String sections[] = line.split(<div class="blank">','</div>);
 
+      // print the pieces of the string
+      System.out.println("Line split by delimeter:");
+
+      for (int i = 0; i < <div class="blank">sections.length</div>; i++) {
+
+
+        System.out.println(<div class="blank">sections[i]</div>);
+      }
+
       // read a new line from the file
 
       line = <div class="blank">file.readLine()</div>;
@@ -100,21 +116,17 @@ public class App {
       </pre>
     </div>
 
-    <div class="flex-container"> 
-        <div draggable="true" class="flex-box">Hello World</div>
-        <div draggable="true" class="flex-box">println</div>
-        <div draggable="true" class="flex-box">int</div>
-        <div draggable="true" class="flex-box">x<=20</div>
-        <div draggable="true" class="flex-box">}</div>
+    <div class="flex-container" style="overflow-x: scroll;"> 
+        <div draggable="true" class="flex-box">BufferedReader file</div>
+        <div draggable="true" class="flex-box">new FileReader(args[0])</div>
+        <div draggable="true" class="flex-box">readLine()</div>
+        <div draggable="true" class="flex-box">','</div>
+        <div draggable="true" class="flex-box">sections.length</div>
+        <div draggable="true" class="flex-box">sections[i]</div>
+        <div draggable="true" class="flex-box">file.readLine()</div>
     </div>
-
-
-    <p>String str = "______________";</p>
-    <p>System.out._______________(str);</p>
-    <p>_________ x = 15;</p>
-    <p>if(_________) { //Note: We want this to be TRUE</p>
-    <p>System.out.println("Hello to you too");</p>
-    <p>_______</p>
+    <br>
+    <br>
 
 
     <a href="student_summary.html">I'm finished, go to Results Screen!</a>
