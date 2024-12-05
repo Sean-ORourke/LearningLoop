@@ -22,6 +22,7 @@
         }
 
         .flex-box{
+            font-size: medium;
             display: flex;
             justify-content: space-around;
             border: solid black;
@@ -59,25 +60,108 @@
 
     <p>Ready for a Blocks Challenge?</p>
 
-    <p>[fly] [aviation] [bee]</p>
+    <h2>Problem: Splitting a String</h2>
 
-    <p>According to all known laws of _, there is no way a _, should be able to _.</p>
+    <h3>Problem Description</h3>
 
-    <div class="flex-container"> 
-        <div draggable="true" class="flex-box">Hello World</div>
-        <div draggable="true" class="flex-box">println</div>
-        <div draggable="true" class="flex-box">int</div>
-        <div draggable="true" class="flex-box">x<=20</div>
-        <div draggable="true" class="flex-box">}</div>
+    <p>
+        In the problem below, you will work on making code that will split a 
+        string by different delimeter characters. These include characters such as 
+        backslash, space, dash, and period.
+    </p>
+
+    <h4>Example Output</h4>
+
+    <p>In this example, we will be reading from a file named "slash-separated-lines.txt".</p>
+
+    <p>
+      The file looks something like what is shown below<br>
+
+      <div id="file_example" style="background-color: rgb(230, 230, 230); width: 300px;">
+        <p>
+          this-file-can-be-split-by-the-slashes<br>
+          cow-dog-horse-frog-cat<br>
+          one-two-three-four-five<br>
+          summer-fall-winter-spring<br>
+        </p>
+      </div>
+    </p>
+
+    <p>An example output for line three is shown below</p>
+    
+    <div style="background-color: rgb(230, 230, 230); width: 300px;">
+      Line split by delimeter:<br>
+      one<br>
+      two<br>
+      three<br>
+      four<br>
+      five
     </div>
 
+    <h3>Code</h3>
 
-    <p>String str = <span class="empty-box" ></span> ;</p>
-    <p>System.out.<span class="empty-box" ></span>(str);</p>
-    <p><span class="empty-box" ></span> x = 15;</p>
-    <p>if(<span class="empty-box" ></span>) { //Note: We want this to be TRUE</p>
-    <p>System.out.println("Hello to you too");</p>
-    <p><span class="empty-box" ></span></p>
+    <div id="code_block">
+      <pre>
+        <code>
+import java.io.FileReader;
+import java.io.BufferedReader;
+
+public class App {
+  public static void main (String args[]) {
+    // setting up the file for reading
+
+    <div class="empty-box"></div> = new BufferedReader(<div class="empty-box"></div>);
+
+    // read from the file until empty
+
+    String line = file.<div class="empty-box"></div>;
+
+    while (line != null) {
+      // split the string by delimeter
+
+      String sections[] = line.split(<div class="empty-box"></div>);
+
+      // print the pieces of the string
+      System.out.println("Line split by delimeter:");
+
+      for (int i = 0; i < <div class="empty-box"></div>; i++) {
+
+
+        System.out.println(<div class="empty-box"></div>);
+      }
+
+      // read a new line from the file
+
+      line = <div class="empty-box"></div>;
+    }
+  }
+}
+        </code>
+      </pre>
+    </div>
+
+    <div class="flex-container" style="overflow-x: scroll;"> 
+        <!-- Correct order of answers -->
+        <!-- 
+        BufferedReader&nbsp;file
+        new&nbsp;FileReader(args[0])
+        readLine()
+        ','
+        sections.length
+        sections[i]
+        file.readLine()
+        -->
+        
+        <div draggable="true" class="flex-box">BufferedReader&nbsp;file</div>
+        <div draggable="true" class="flex-box">new&nbsp;FileReader(args[0])</div>
+        <div draggable="true" class="flex-box">readLine()</div>
+        <div draggable="true" class="flex-box">','</div>
+        <div draggable="true" class="flex-box">sections.length</div>
+        <div draggable="true" class="flex-box">sections[i]</div>
+        <div draggable="true" class="flex-box">file.readLine()</div>
+    </div>
+    <br>
+    <br>
 
 
     <a href="student_summary.html">I'm finished, go to Results Screen!</a>
