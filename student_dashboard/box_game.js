@@ -25,7 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
           flexContainer.appendChild(existingElement);
         }
   
+        let width = draggedElement.offsetWidth;
         target.appendChild(draggedElement);
+        target.style.width = `${width + 10}px`; // 10 is margin
         draggedElement = null;
       });
     });

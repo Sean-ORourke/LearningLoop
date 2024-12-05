@@ -22,6 +22,7 @@
         }
 
         .flex-box{
+            font-size: medium;
             display: flex;
             justify-content: space-around;
             border: solid black;
@@ -98,29 +99,29 @@ public class App {
   public static void main (String args[]) {
     // setting up the file for reading
 
-    <div class="blank">BufferedReader file</div> = new BufferedReader(<div class="blank">new FileReader(args[0])</div>);
+    <div class="empty-box"></div> = new BufferedReader(<div class="empty-box"></div>);
 
     // read from the file until empty
 
-    String line = file.<div class="blank">readLine()</div>;
+    String line = file.<div class="empty-box"></div>;
 
     while (line != null) {
       // split the string by delimeter
 
-      String sections[] = line.split(<div class="blank">','</div>);
+      String sections[] = line.split(<div class="empty-box"></div>);
 
       // print the pieces of the string
       System.out.println("Line split by delimeter:");
 
-      for (int i = 0; i < <div class="blank">sections.length</div>; i++) {
+      for (int i = 0; i < <div class="empty-box"></div>; i++) {
 
 
-        System.out.println(<div class="blank">sections[i]</div>);
+        System.out.println(<div class="empty-box"></div>);
       }
 
       // read a new line from the file
 
-      line = <div class="blank">file.readLine()</div>;
+      line = <div class="empty-box"></div>;
     }
   }
 }
@@ -129,8 +130,19 @@ public class App {
     </div>
 
     <div class="flex-container" style="overflow-x: scroll;"> 
-        <div draggable="true" class="flex-box">BufferedReader file</div>
-        <div draggable="true" class="flex-box">new FileReader(args[0])</div>
+        <!-- Correct order of answers -->
+        <!-- 
+        BufferedReader&nbsp;file
+        new&nbsp;FileReader(args[0])
+        readLine()
+        ','
+        sections.length
+        sections[i]
+        file.readLine()
+        -->
+        
+        <div draggable="true" class="flex-box">BufferedReader&nbsp;file</div>
+        <div draggable="true" class="flex-box">new&nbsp;FileReader(args[0])</div>
         <div draggable="true" class="flex-box">readLine()</div>
         <div draggable="true" class="flex-box">','</div>
         <div draggable="true" class="flex-box">sections.length</div>
