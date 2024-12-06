@@ -5,6 +5,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const blockList = []
   localStorage.clear()
   let draggedElement = null;
+  let score = 0;
+
+  // set up correct answers for draggables and target boxes
+  const correctAnswers = {
+    0: 0, 
+    1: 1, 
+    2: 2, 
+    3: 3, 
+    4: 4,
+    5: 5, 
+    6: 6 
+  };
 
   codeBlocks.forEach(block => {
     block.addEventListener("dragstart", event => {
@@ -40,8 +52,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         target.appendChild(draggedElement);
+        // access draggable element and target box
+        const blockIndex = Number(draggedElement.title);
+        const targetIndex = Number(target.title);
+        // compare element and target : if match --> score++
+        // if the numbers don't match, do nothing 
+        if (correctAnswers[targetIndex] === blockIndex) score++; 
+        
+        localStorage.setItem("score", score);
+
         blockList[Number(target.title)] = Number(draggedElement.title);
-        document.getElementById("order").innerHTML += draggedElement.title + target.title + "[" + blockList[6].toString() + "] ";
+        document.getElementById("order").innerHTML += draggedElement.title + target.title; //+ "[" + blockList.toString() + "] ";
         localStorage[Number(target.title)] = Number(draggedElement.title);
 
         draggedElement = null;
