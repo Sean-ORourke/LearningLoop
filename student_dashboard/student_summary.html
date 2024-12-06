@@ -1,12 +1,15 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="student_summary.css"> <!-- May combine the CSS files into one later on, but for now I believe they should be different enough to be seprate files -->
+    <link rel="stylesheet" type="text/css" href="student_summary.css">
+    <!-- May combine the CSS files into one later on, but for now I believe they should be different enough to be seprate files -->
 
     <title>Results Screen</title>
 
 </head>
+
 <body>
 
     <h1>Results Screen</h1>
@@ -23,9 +26,14 @@
 
     <a href="game_view.html">Retry Block Challenge!</a>
 
+    <p>Final Score: <span id="finalScore"></span></p>
+
     <script>
+        const finalScore = localStorage.getItem("score") || 0;
+        document.getElementById("finalScore").innerText = finalScore;
         document.getElementById("answers").innerHTML = localStorage[0] + localStorage[1] + localStorage[2] + localStorage[3] + localStorage[4] + localStorage[5] + localStorage[6]
     </script>
-    
+
 </body>
+
 </html>
