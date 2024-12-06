@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const codeBlocks = document.querySelectorAll(".flex-box");
   const dropTargets = document.querySelectorAll(".empty-box");
   const flexContainer = document.querySelector(".flex-container");
+  const blockList = []
+  localStorage.clear()
   let draggedElement = null;
 
   codeBlocks.forEach(block => {
@@ -38,6 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         target.appendChild(draggedElement);
+        blockList[Number(target.title)] = Number(draggedElement.title);
+        document.getElementById("order").innerHTML += draggedElement.title + target.title + "[" + blockList[6].toString() + "] ";
+        localStorage[Number(target.title)] = Number(draggedElement.title);
 
         draggedElement = null;
       }
