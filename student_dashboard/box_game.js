@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("score", score);
 
         blockList[Number(target.title)] = Number(draggedElement.title);
-        document.getElementById("order").innerHTML += draggedElement.title + target.title + "[" + blockList[6].toString() + "] ";
+        document.getElementById("order").innerHTML += draggedElement.title + target.title; //+ "[" + blockList.toString() + "] ";
         localStorage[Number(target.title)] = Number(draggedElement.title);
 
         draggedElement = null;
