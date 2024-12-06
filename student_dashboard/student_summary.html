@@ -19,7 +19,13 @@
     <p>bee - correct!</p>
     <p>fly - correct!</p>
 
+    <p id="answers"></p>
+
     <a href="game_view.html">Retry Block Challenge!</a>
+
+    <script>
+        document.getElementById("answers").innerHTML = localStorage[0] + localStorage[1] + localStorage[2] + localStorage[3] + localStorage[4] + localStorage[5] + localStorage[6]
+    </script>
     
 </body>
 </html>
