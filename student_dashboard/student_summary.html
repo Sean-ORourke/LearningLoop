@@ -25,23 +25,14 @@
 
     <p id="answers"></p>
 
-    <p>You Got: <span id="finalScore"></span></p>
-    <p>Thats a <span id="percent"></span></p>
     <p>Great job! You have earned <span id="points"></span> points!</p>
 
     <a href="game_view.html">Retry Block Challenge!</a>
 
     <script>
         const finalScore = localStorage.getItem("score") || 0;
-        document.getElementById("finalScore").innerText = finalScore.toString() + "/7";
-        let percent = "";
-        if(finalScore>=7){
-            percent = "100%"
-        }else{
-            percent = (((finalScore/7)*100).toString().substring(0,4))+"%";
-        }
-        document.getElementById("percent").innerText = percent
-        let points = finalScore*100;
+
+        let points = finalScore;
         document.getElementById("points").innerText = points
         document.getElementById("answers").innerHTML = localStorage[0] + localStorage[1] + localStorage[2] + localStorage[3] + localStorage[4] + localStorage[5] + localStorage[6]
     </script>
