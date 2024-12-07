@@ -38,6 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (target !== flexContainer && target.children.length > 0) {
         const existingElement = target.firstElementChild;
         flexContainer.appendChild(existingElement);
+        if(localStorage[Number(existingElement.title)] == correctAnswers[existingElement.title]) score--; //If the block being kicked out was correct, reduce score
+        document.getElementById("debug").innerHTML += "kick";
+        
       }
 
       if (draggedElement) {
@@ -57,13 +60,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const targetIndex = Number(target.title);
         // compare element and target : if match --> score++
         // if the numbers don't match, do nothing 
-        if (correctAnswers[targetIndex] === blockIndex) score++; 
+        if (correctAnswers[targetIndex] === blockIndex) score++;
+        
+        if(localStorage[Number(draggedElement.title)] == correctAnswers[draggedElement.title]) score--; //If the moved code block is being moved out of the correct position, reduce score
+        //if(target.hasChildNodes)
         
         localStorage.setItem("score", score);
 
-        blockList[Number(target.title)] = Number(draggedElement.title);
+        blockList[Number(draggedElement.title)] = Number(target.title);
         document.getElementById("order").innerHTML += draggedElement.title + target.title; //+ "[" + blockList.toString() + "] ";
-        localStorage[Number(target.title)] = Number(draggedElement.title);
+        localStorage[Number(draggedElement.title)] = Number(target.title);
+
+        document.getElementById("debug").innerHTML += "base " + score.toString() + " ";
 
         draggedElement = null;
       }
@@ -73,7 +81,23 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("dragend", () => {
     if (draggedElement && !draggedElement.parentNode.closest(".empty-box") && draggedElement.parentNode !== flexContainer) {
       flexContainer.appendChild(draggedElement);
+      if(localStorage[Number(draggedElement.title)] == correctAnswers[draggedElement.title]){
+        score--;
+        localStorage[Number(draggedElement.title)] = -1;
+        document.getElementById("debug").innerHTML += "ugh ";
+        localStorage.setItem("score", score);
+      }
+      document.getElementById("debug").innerHTML += "bottom " + score.toString() + " ";
+      
       draggedElement = null;
     }
+    if (previousContainer !== flexContainer) {
+      previousContainer.classList.remove('filled-box');
+      previousContainer.classList.add('empty-box');
+      //if(localStorage[Number(existingElement.title)] == correctAnswers[existingElement.title]) score--;
+    }
+    previousContainer = null;
   });
+
+
 });
