@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -30,7 +31,7 @@
 
     <script>
         const finalScore = localStorage.getItem("score") || 0;
-        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("finalScore").innerText = `${finalScore} points!`;
         document.getElementById("answers").innerHTML = localStorage[0] + localStorage[1] + localStorage[2] + localStorage[3] + localStorage[4] + localStorage[5] + localStorage[6]
     </script>
 

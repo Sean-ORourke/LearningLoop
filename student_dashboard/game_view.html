@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -43,6 +44,43 @@
             width: 200px;
         }
 
+        /* for future css changes, set these properties to change look of a correct box */
+        .correct-box{
+          display: inline-block;
+          justify-content: space-around;
+          border: solid green;
+          background-color: white;
+          border-width: 5px;
+          margin: 5px;
+          height: 35px;
+          width: 200px;
+        }
+
+        /* for future css changes, set these properties to change look of a box that is missing a code block*/
+        .unanswered-box{
+          display: inline-block;
+          justify-content: space-around;
+          border: solid yellow;
+          background-color: white;
+          border-width: 5px;
+          margin: 5px;
+          height: 35px;
+          width: 200px;
+        }
+
+        /* for future css changes, set these properties to change look of an incorrect box */
+        .incorrect-box{
+          display: inline-block;
+          justify-content: space-around;
+          border: solid red;
+          background-color: white;
+          border-width: 5px;
+          margin: 5px;
+          height: 35px;
+          width: 200px;
+        }
+
+        /* Don't think this is doing anything right now */
         .filled-box {
             display: inline-block;
             justify-content: space-around;
@@ -164,8 +202,10 @@ public class App {
     <br>
 
     <p id="order"></p>
+    <p id="running_points">Points: </p>
 
-    <a href="student_summary.html">I'm finished, go to Results Screen!</a>
+    <button id="check_button" type="button">Check Answers</button>
+    <a id="summary_page" href="student_summary.html">I'm finished, go to Results Screen!</a>
 
 </body>
 </html>
