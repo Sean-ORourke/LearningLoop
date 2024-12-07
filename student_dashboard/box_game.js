@@ -38,9 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (target !== flexContainer && target.children.length > 0) {
         const existingElement = target.firstElementChild;
         flexContainer.appendChild(existingElement);
-        if(existingElement.title != draggedElement.title){
-          if(localStorage[Number(existingElement.title)] == correctAnswers[existingElement.title]) score--; //If the block being kicked out was correct, reduce score
-        }
+        if(localStorage[Number(existingElement.title)] == correctAnswers[existingElement.title]) score--; //If the block being kicked out was correct, reduce score
         
       }
 
@@ -80,8 +78,15 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("dragend", () => {
     if (draggedElement && !draggedElement.parentNode.closest(".empty-box") && draggedElement.parentNode !== flexContainer) {
       flexContainer.appendChild(draggedElement);
-      if(localStorage[Number(draggedElement.title)] == correctAnswers[draggedElement.title]) score--; //If the moved code block is being moved out of the correct position, reduce score
+      if(localStorage[Number(draggedElement.title)] == correctAnswers[draggedElement.title]) score--; //
       draggedElement = null;
     }
+    if (previousContainer !== flexContainer) {
+      previousContainer.classList.remove('filled-box');
+      previousContainer.classList.add('empty-box');
+      //if(localStorage[Number(existingElement.title)] == correctAnswers[existingElement.title]) score--;
+    }
+    previousContainer = null;
   });
+
 });
