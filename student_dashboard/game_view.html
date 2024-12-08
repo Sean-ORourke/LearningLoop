@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="game_view.css">
   <!-- May combine the CSS files into one later on, but for now I believe they should be different enough to be seprate files -->
   <script type="text/javascript" src="box_game.js"></script>
-  <title>Game View</title>
+  <title>Learning Loop Game View</title>
 
 </head>
 
@@ -97,9 +97,9 @@
 
     </style> -->
 
-  <h1>Game View</h1>
+  <h1 id="title">Game View</h1>
 
-  <p>Ready for a Blocks Challenge?</p>
+  <p id="ready">Ready for a Blocks Challenge?</p>
 
   <h2>Problem: Splitting a String</h2>
 
@@ -107,7 +107,10 @@
 
   <p>
     In the problem below, you will work on making code that will split a
-    string by different delimeter characters. These include characters such as
+    string by different delimeter characters. 
+  </p>
+  <p>
+    These include characters such as
     backslash, space, dash, and period.
   </p>
 
@@ -204,11 +207,13 @@ public class App {
   <br>
   <br>
 
-  <div id="bottom">
+  <div id="bottom" class="flex-container">
     <p id="order"></p>
     <p id="running_points">Points: </p>
 
     <button id="check_button" type="button">Check Answers</button>
+    <br>
+    <br>
     <a id="summary_page" href="student_summary.html">I'm finished, go to Results Screen!</a>
   </div>
 
