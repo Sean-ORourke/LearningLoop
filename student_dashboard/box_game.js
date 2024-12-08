@@ -62,7 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (correct_answer === codeBlock.id) {
           // make box green (or whatever is set in correct-box css rules)
           box.setAttribute("class", "correct-box")
-          score += round_block_points;
+          if (rounds_left !== 0)
+            score += round_block_points;
         } else {
           // make box red (or whatever is set in incorrect-box css rules)
           box.setAttribute("class", "incorrect-box")
@@ -76,20 +77,15 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // reduce score adder for next check
       if (round_block_points > 50) // this will limit the points to 3 rounds
-      round_block_points -= 25;
+        round_block_points -= 25;
       else  {
         round_block_points = 0;
       }
   
       localStorage.setItem("score", score);
-      rounds_left--;
+      if (rounds_left !== 0)
+        rounds_left--;
       localStorage.setItem("rounds_left", rounds_left)
-  
-      // check to see if user is all correct
-      if (incorrect_answers === 0) {
-        const next_page = document.getElementById("summary_page");
-        next_page.click();
-      }
     }
   });
 
@@ -147,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("order").innerHTML += draggedElement.title + target.title; //+ "[" + blockList.toString() + "] ";
         localStorage[Number(draggedElement.title)] = Number(target.title);
 
-        document.getElementById("debug").innerHTML += "base " + score.toString() + " ";
+        // document.getElementById("debug").innerHTML += "base " + score.toString() + " ";
 
         draggedElement = null;
       }
@@ -163,11 +159,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("debug").innerHTML += "ugh ";
         localStorage.setItem("score", score);
       }
-      document.getElementById("debug").innerHTML += "bottom " + score.toString() + " ";
+      // document.getElementById("debug").innerHTML += "bottom " + score.toString() + " ";
       
       draggedElement = null;
     }
-    if (previousContainer !== flexContainer) {
+    let previousContainer = null;
+    if (previousContainer !== null && previousContainer !== flexContainer) {
       previousContainer.classList.remove('filled-box');
       previousContainer.classList.add('empty-box');
       //if(localStorage[Number(existingElement.title)] == correctAnswers[existingElement.title]) score--;
