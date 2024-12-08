@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" type="text/css" href="game_view.css"> <!-- May combine the CSS files into one later on, but for now I believe they should be different enough to be seprate files -->
-    <script type="text/javascript" src="box_game.js"></script>
-    <title>Game View</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="game_view.css">
+  <!-- May combine the CSS files into one later on, but for now I believe they should be different enough to be seprate files -->
+  <script type="text/javascript" src="box_game.js"></script>
+  <title>Game View</title>
 
 </head>
+
 <body>
-    <style>
+  <!-- <style>
         .flex-container{
             display: flex;
             justify-content: space-evenly;
@@ -92,54 +95,54 @@
             width: 200px;
         }
 
-    </style>
+    </style> -->
 
-    <h1>Game View</h1>
+  <h1>Game View</h1>
 
-    <p>Ready for a Blocks Challenge?</p>
+  <p>Ready for a Blocks Challenge?</p>
 
-    <h2>Problem: Splitting a String</h2>
+  <h2>Problem: Splitting a String</h2>
 
-    <h3>Problem Description</h3>
+  <h3>Problem Description</h3>
 
+  <p>
+    In the problem below, you will work on making code that will split a
+    string by different delimeter characters. These include characters such as
+    backslash, space, dash, and period.
+  </p>
+
+  <h4>Example Output</h4>
+
+  <p>In this example, we will be reading from a file named "slash-separated-lines.txt".</p>
+
+  <p>
+    The file looks something like what is shown below<br>
+
+  <div id="file_example"> <!-- style="background-color: rgb(230, 230, 230); width: 300px;"> -->
     <p>
-        In the problem below, you will work on making code that will split a 
-        string by different delimeter characters. These include characters such as 
-        backslash, space, dash, and period.
+      this-file-can-be-split-by-the-slashes<br>
+      cow-dog-horse-frog-cat<br>
+      one-two-three-four-five<br>
+      summer-fall-winter-spring<br>
     </p>
+  </div>
+  </p>
 
-    <h4>Example Output</h4>
+  <p>An example output for line three is shown below</p>
 
-    <p>In this example, we will be reading from a file named "slash-separated-lines.txt".</p>
+  <!-- <div id="line_split"> style="background-color: rgb(230, 230, 230); width: 300px;"> -->
+  Line split by delimeter:<br>
+  one<br>
+  two<br>
+  three<br>
+  four<br>
+  five
+  </div>
 
-    <p>
-      The file looks something like what is shown below<br>
+  <h3>Code</h3>
 
-      <div id="file_example" style="background-color: rgb(230, 230, 230); width: 300px;">
-        <p>
-          this-file-can-be-split-by-the-slashes<br>
-          cow-dog-horse-frog-cat<br>
-          one-two-three-four-five<br>
-          summer-fall-winter-spring<br>
-        </p>
-      </div>
-    </p>
-
-    <p>An example output for line three is shown below</p>
-    
-    <div style="background-color: rgb(230, 230, 230); width: 300px;">
-      Line split by delimeter:<br>
-      one<br>
-      two<br>
-      three<br>
-      four<br>
-      five
-    </div>
-
-    <h3>Code</h3>
-
-    <div id="code_block">
-      <pre>
+  <div id="code_block">
+    <pre>
         <code>
 import java.io.FileReader;
 import java.io.BufferedReader;
@@ -176,11 +179,11 @@ public class App {
 }
         </code>
       </pre>
-    </div>
+  </div>
 
-    <div class="flex-container" style="overflow-x: scroll;"> 
-        <!-- Correct order of answers -->
-        <!-- 
+  <div id="answers_origin" class="flex-container"> <!-- style="overflow-x: scroll;">  -->
+    <!-- Correct order of answers -->
+    <!-- 
         BufferedReader&nbsp;file
         new&nbsp;FileReader(args[0])
         readLine()
@@ -189,23 +192,26 @@ public class App {
         sections[i]
         file.readLine()
         -->
-        
-        <div draggable="true" class="flex-box" id="code_0" title="0">BufferedReader&nbsp;file</div>
-        <div draggable="true" class="flex-box" id="code_1" title="1">new&nbsp;FileReader(args[0])</div>
-        <div draggable="true" class="flex-box" id="code_2" title="2">readLine()</div>
-        <div draggable="true" class="flex-box" id="code_3" title="3">','</div>
-        <div draggable="true" class="flex-box" id="code_4" title="4">sections.length</div>
-        <div draggable="true" class="flex-box" id="code_5" title="5">sections[i]</div>
-        <div draggable="true" class="flex-box" id="code_6" title="6">file.readLine()</div>
-    </div>
-    <br>
-    <br>
 
+    <div draggable="true" class="flex-box" id="code_0" title="0">BufferedReader&nbsp;file</div>
+    <div draggable="true" class="flex-box" id="code_1" title="1">new&nbsp;FileReader(args[0])</div>
+    <div draggable="true" class="flex-box" id="code_2" title="2">readLine()</div>
+    <div draggable="true" class="flex-box" id="code_3" title="3">','</div>
+    <div draggable="true" class="flex-box" id="code_4" title="4">sections.length</div>
+    <div draggable="true" class="flex-box" id="code_5" title="5">sections[i]</div>
+    <div draggable="true" class="flex-box" id="code_6" title="6">file.readLine()</div>
+  </div>
+  <br>
+  <br>
+
+  <div id="bottom">
     <p id="order"></p>
     <p id="running_points">Points: </p>
 
     <button id="check_button" type="button">Check Answers</button>
     <a id="summary_page" href="student_summary.html">I'm finished, go to Results Screen!</a>
+  </div>
 
 </body>
+
 </html>

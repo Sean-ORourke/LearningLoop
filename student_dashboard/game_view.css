@@ -1,9 +1,33 @@
+#bottom {
+    background-color: antiquewhite;
+    position:fixed;
+    right:0;
+    bottom: 0;
+}
+
+#answers_origin {
+   /* overflow-y: scroll; */
+   float: right;
+   width: 40%;
+   height: 100%;
+}
+
+#line_split {
+    background-color: rgb(230, 230, 230); width: 300px
+}
+
+#file_example {
+    background-color: rgb(230, 230, 230); width: 300px;
+}
+
 #code_block {
     background-color: rgb(230, 230, 230);
+    float: left;
 }
 
 #code_block code {
     font-size: large;
+    float: left;
 }
 
 #code_block div.blank {
@@ -19,4 +43,89 @@
 
 a {
     font-size: xx-large;
+}
+
+.flex-container{
+    display: block;
+    justify-content: space-evenly;
+    border: solid grey;
+    background-color: rgb(229, 229, 229);
+    border-width: 5px;
+    padding: 10px;
+    margin: 5px;
+    height: 100%;
+}
+
+.flex-box{
+    font-size: medium;
+    display: flex;
+    justify-content: space-around;
+    border: solid black;
+    background-color: white;
+    border-width: 5px;
+    padding: 10px;
+    margin: 5px;
+    /* float: right; */
+    display: block;
+    /* position: relative;
+    top: 315px; */
+}
+
+.empty-box{
+    display: inline-block;
+    justify-content: space-around;
+    border: solid black;
+    background-color: white;
+    border-width: 5px;
+    margin: 5px;
+    height: 35px;
+    width: 200px;
+}
+
+/* for future css changes, set these properties to change look of a correct box */
+.correct-box{
+  display: inline-block;
+  justify-content: space-around;
+  border: solid green;
+  background-color: white;
+  border-width: 5px;
+  margin: 5px;
+  height: 35px;
+  width: 200px;
+}
+
+/* for future css changes, set these properties to change look of a box that is missing a code block*/
+.unanswered-box{
+  display: inline-block;
+  justify-content: space-around;
+  border: solid yellow;
+  background-color: white;
+  border-width: 5px;
+  margin: 5px;
+  height: 35px;
+  width: 200px;
+}
+
+/* for future css changes, set these properties to change look of an incorrect box */
+.incorrect-box{
+  display: inline-block;
+  justify-content: space-around;
+  border: solid red;
+  background-color: white;
+  border-width: 5px;
+  margin: 5px;
+  height: 35px;
+  width: 200px;
+}
+
+/* Don't think this is doing anything right now */
+.filled-box {
+    display: inline-block;
+    justify-content: space-around;
+    border: solid black;
+    background-color: white;
+    border-width: 5px;
+    margin: 5px;
+    height: 35px;
+    width: 200px;
 }
