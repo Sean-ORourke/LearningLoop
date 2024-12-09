@@ -61,9 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (correct_answer === codeBlock.id) {
           // make box green (or whatever is set in correct-box css rules)
-          box.setAttribute("class", "correct-box")
-          if (rounds_left !== 0)
+          let class_name = box.getAttribute("class");
+          if (class_name !== "correct-box") {
+            box.setAttribute("class", "correct-box")
             score += round_block_points;
+          }
         } else {
           // make box red (or whatever is set in incorrect-box css rules)
           box.setAttribute("class", "incorrect-box")
@@ -73,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // add correct points to score element
       let score_element = document.getElementById("running_points");
-      score_element.innerText = `Points: ${score} + Round Multiplier (added later)`;
+      score_element.innerText = `Points: ${score}`;
       
       // reduce score adder for next check
       if (round_block_points > 50) // this will limit the points to 3 rounds
@@ -92,12 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let next_page = document.getElementById("summary_page");
   next_page.addEventListener("click", event => {
     // those with extra rounds will get more points
-    if (rounds_left === 2) {
-      score += (75 + 50) * dropTargets.length;
-    } else if (rounds_left === 1) {
-      score += 50 * dropTargets.length;
-    }
-    localStorage.setItem("score", score);
+    let button = document.getElementById("check_button");
+    button.click();
   });
 
   codeBlocks.forEach(block => {
@@ -126,6 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (draggedElement) {
+        if (draggedElement.parentNode.classList.contains("correct-box"))
+          return;
         if (target === flexContainer) {
           if (draggedElement.parentNode.classList.contains("filled-box")) {
             draggedElement.parentNode.classList.remove("filled-box");
@@ -152,6 +152,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.body.addEventListener("dragend", () => {
     if (draggedElement && !draggedElement.parentNode.closest(".empty-box") && draggedElement.parentNode !== flexContainer) {
+      if (draggedElement.parentNode.classList.contains("correct-box"))
+        return;
       flexContainer.appendChild(draggedElement);
       if(localStorage[Number(draggedElement.title)] == correctAnswers[draggedElement.title]){
         score--;
@@ -174,3 +176,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+//TODO:
+// Make sure user can exit with giving up
