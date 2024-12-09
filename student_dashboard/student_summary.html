@@ -13,27 +13,33 @@
 
 <body>
 
-    <h1>Results Screen</h1>
+    <h1>Results</h1>
 
     <p>Great Job completing the Blocks Challenge!</p>
 
-    <p>100%</p>
+    <!-- <p>100%</p>
 
     <p>aviation - correct!</p>
     <p>bee - correct!</p>
     <p>fly - correct!</p>
 
-    <p id="answers"></p>
+    <p id="answers"></p> -->
 
-    <p>Great job! You have earned <span id="points"></span> points!</p>
+    <p>You have earned <span id="points"></span> points, in <span id="rounds"></span> rounds!</p>
 
     <a href="game_view.html">Retry Block Challenge!</a>
 
     <script>
         const finalScore = localStorage.getItem("score") || 0;
+        const roundss = 3 - parseInt(localStorage.getItem("rounds_left")) || 0;
+        // 1 == 1 try
+        //0 == 2 tries
+
 
         let points = finalScore;
+        let rounds = roundss;
         document.getElementById("points").innerText = points
+        document.getElementById("rounds").innerText = rounds
         document.getElementById("answers").innerHTML = localStorage[0] + localStorage[1] + localStorage[2] + localStorage[3] + localStorage[4] + localStorage[5] + localStorage[6]
     </script>
 

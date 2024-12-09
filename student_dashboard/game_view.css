@@ -43,7 +43,7 @@
 }
 
 #answers_origin {
-   float: right;
+   
    width: 47%;
    height: 50%;
    position:fixed;
@@ -51,6 +51,8 @@
     bottom: 30%;
     background-color:rgb(51, 150, 128);
     border: solid black 5px;
+    justify-content: center;
+    align-items: center;
 }
 
 #line_split {
@@ -109,7 +111,7 @@ a {
 
 .flex-container{
     display: block;
-    justify-content: space-evenly;
+    justify-content: center;
     border: solid grey;
     background-color: rgb(229, 229, 229);
     border-width: 5px;
@@ -120,8 +122,8 @@ a {
 
 .flex-box{
     font-size: medium;
-    display: flex;
-    justify-content: space-around;
+    display:flex;
+    justify-content: center;
     border: solid black;
     background-color: white;
     border-width: 5px;
@@ -136,6 +138,7 @@ a {
     background-color: rgb(31, 46, 46);
     font-weight: bold;
     color:green;
+    width: 200px;
 }
 
 .empty-box{
