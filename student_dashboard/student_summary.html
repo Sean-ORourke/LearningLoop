@@ -15,32 +15,56 @@
 
     <h1>Results</h1>
 
-    <p>Great Job completing the Blocks Challenge!</p>
+    <p id="great_job">Great job completing the Blocks Challenge!</p>
 
     <!-- <p>100%</p>
 
     <p>aviation - correct!</p>
     <p>bee - correct!</p>
-    <p>fly - correct!</p>
+    <p>fly - correct!</p> -->
 
-    <p id="answers"></p> -->
+    
 
-    <p>You have earned <span id="points"></span> points, in <span id="rounds"></span> rounds!</p>
+    <p>You have earned <span id="points"></span> points, by getting <span id="fracScore"></span><span id="endFrac">/7</span> code block placements in <span id="rounds"></span> round(s)!</p>
+
+    <p id="answers"></p>
 
     <a href="game_view.html">Retry Block Challenge!</a>
 
     <script>
         const finalScore = localStorage.getItem("score") || 0;
-        const roundss = 3 - parseInt(localStorage.getItem("rounds_left")) || 0;
+        const roundss = 3 - parseInt(localStorage.getItem("rounds_left")) || 1;
         // 1 == 1 try
         //0 == 2 tries
+        const zero = localStorage[0] || "blank zero not filled in!";
+        const one = localStorage[1] || "blank one not filled in!";
+        const two = localStorage[2] || "blank two not filled in!";
+        const three = localStorage[3] || "blank three not filled in!";
+        const four = localStorage[4] || "blank four not filled in!";
+        const five = localStorage[5] || "blank five not filled in!";
+        const six = localStorage[6] || "blank six not filled in!";
 
+        let fracScore = 0;
+
+        if (zero == 0) fracScore++;
+        if (one == 1) fracScore++;
+        if (two == 2) fracScore++;
+        if (three == 3) fracScore++;
+        if (four == 4) fracScore++;
+        if (five == 5) fracScore++;
+        if (six == 6) fracScore++;
 
         let points = finalScore;
         let rounds = roundss;
+        let answers = `${zero} ${one} ${two} ${three} ${four} ${five} ${six}`
+        if (answers == "0 1 2 3 4 5 6") {
+            document.getElementById("answers").style.display = 'none'
+        }
         document.getElementById("points").innerText = points
         document.getElementById("rounds").innerText = rounds
-        document.getElementById("answers").innerHTML = localStorage[0] + localStorage[1] + localStorage[2] + localStorage[3] + localStorage[4] + localStorage[5] + localStorage[6]
+        document.getElementById("fracScore").innerText = fracScore
+        document.getElementById("answers").innerText = `Keep trying for the answer!\n\n ${zero} ${one} ${two} ${three} ${four} ${five} ${six}`
+        // document.getElementById("answers").innerText = localStorage[0] + localStorage[1] + localStorage[2] + localStorage[3] + localStorage[4] + localStorage[5] + localStorage[6] || "blanks not filled in!"
     </script>
 
 </body>
