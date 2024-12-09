@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let draggedElement = null;
   let score = 0; // to hold the total score that will be written to localStorage
   let round_block_points = 100; // will decrement for each round (100, 75, 50)
-  let rounds_left = 3; // to calculate bonus points for not using all rounds
+  let rounds_left = 4; // to calculate bonus points for not using all rounds
   let check_answers = true; // will be false if user gets all correct
 
   // set up correct answers for draggables and target boxes

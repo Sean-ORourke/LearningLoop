@@ -1,5 +1,48 @@
+#great_job {
+    margin-top: 15px;
+    font-size: 300%;
+    margin-bottom: 0px;
+}
+
 body {
-    
+    margin-top: 15px;
     background-color: rgb(0, 139, 69);
-    font-size: 115%;
+    font-size: 220%;
+    font-style: oblique;
+}
+
+#fracScore, #endFrac {
+    margin-top: -50px;
+    font-size: 200px;
+    color: rgb(27, 212, 89);
+}
+
+#rounds {
+    margin-top: -50px;
+    font-size: 100px;
+    color: rgb(27, 212, 89);
+}
+
+
+#points {
+    margin-top: -50px;
+    font-size: 300px;
+    color: rgb(27, 212, 89);
+}
+
+h1 {
+    margin-top: 0%;
+    font-size: 100px;
+    margin-bottom: 0%;
+    color: rgb(27, 212, 89);
+}
+
+#answers {
+    margin-top: -50px;
+    color: red;
+    background-color: yellow;
+}
+
+a {
+    font-size: 200px;
 }
