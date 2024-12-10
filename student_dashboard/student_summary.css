@@ -11,7 +11,8 @@ body {
     font-style: oblique;
 }
 
-#fracScore, #endFrac {
+#fracScore,
+#endFrac {
     margin-top: -50px;
     font-size: 200px;
     color: rgb(27, 212, 89);

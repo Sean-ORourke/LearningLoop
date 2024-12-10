@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="student_summary.css">
-    <!-- May combine the CSS files into one later on, but for now I believe they should be different enough to be seprate files -->
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./student_summary.css">
+
+    <!-- JS -->
+    <script src="../buisness_layer/game_engine/evaluate_block_game.js"></script>
 
     <title>Results Screen</title>
 
@@ -17,25 +20,21 @@
 
     <p id="great_job">Great job completing the Blocks Challenge!</p>
 
-    <!-- <p>100%</p>
-
-    <p>aviation - correct!</p>
-    <p>bee - correct!</p>
-    <p>fly - correct!</p> -->
-
-    
-
-    <p>You have earned <span id="points"></span> points, by getting <span id="fracScore"></span><span id="endFrac">/7</span> code block placements in <span id="rounds"></span> round(s)!</p>
+    <p>You have earned <span id="points"></span> points, by getting <span id="fracScore"></span><span
+            id="endFrac">/7</span> code block placements in <span id="rounds"></span> round(s)!</p>
 
     <p id="answers"></p>
 
     <a href="game_view.html">Retry Block Challenge!</a>
 
     <script>
+        //getting final score from local storage
         const finalScore = localStorage.getItem("score") || 0;
+
+        //getting rounds played from local storage
         const roundss = 3 - parseInt(localStorage.getItem("rounds_left")) || 1;
-        // 1 == 1 try
-        //0 == 2 tries
+
+        //getting values from local storage for blanks filled in, if null, store an error message
         const zero = localStorage[0] || "blank zero not filled in!";
         const one = localStorage[1] || "blank one not filled in!";
         const two = localStorage[2] || "blank two not filled in!";
@@ -44,6 +43,7 @@
         const five = localStorage[5] || "blank five not filled in!";
         const six = localStorage[6] || "blank six not filled in!";
 
+        //calculating the numerator of the fraction
         let fracScore = 0;
 
         if (zero == 0) fracScore++;
@@ -54,9 +54,12 @@
         if (five == 5) fracScore++;
         if (six == 6) fracScore++;
 
+        // concatinating
         let points = finalScore;
         let rounds = roundss;
         let answers = `${zero} ${one} ${two} ${three} ${four} ${five} ${six}`
+
+        // displaying in HTML
         if (answers == "0 1 2 3 4 5 6") {
             document.getElementById("answers").style.display = 'none'
         }
@@ -64,9 +67,7 @@
         document.getElementById("rounds").innerText = rounds
         document.getElementById("fracScore").innerText = fracScore
         document.getElementById("answers").innerText = `Keep trying for the answer!\n\n ${zero} ${one} ${two} ${three} ${four} ${five} ${six}`
-        // document.getElementById("answers").innerText = localStorage[0] + localStorage[1] + localStorage[2] + localStorage[3] + localStorage[4] + localStorage[5] + localStorage[6] || "blanks not filled in!"
     </script>
-
 </body>
 
 </html>

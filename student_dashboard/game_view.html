@@ -5,9 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" type="text/css" href="game_view.css">
-  <!-- May combine the CSS files into one later on, but for now I believe they should be different enough to be seprate files -->
-  <script type="text/javascript" src="box_game.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="./game_view.css">
+
+  <!-- JS -->
+  <script src="../buisness_layer/game_engine/evaluate_block_game.js"></script>
+
   <title>Learning Loop Game View</title>
 
 </head>
@@ -24,11 +27,12 @@
 
   <p>
     In the problem below, you will work on making code that will split a
-    string by different delimeter characters. 
-  <br>
+    string by different delimeter characters.
+    <br>
     These include characters such as
-    backslash, space, dash, and period. </p>
-    <p>Please drag the code blocks from the right, into their correct blanks in the code scaffolding on the left.
+    backslash, space, dash, and period.
+  </p>
+  <p>Please drag the code blocks from the right, into their correct blanks in the code scaffolding on the left.
   </p>
 
   <h4>Example Output</h4>
@@ -38,7 +42,7 @@
   <p>
     The file looks something like what is shown below<br>
 
-  <div id="file_example"> <!-- style="background-color: rgb(230, 230, 230); width: 300px;"> -->
+  <div id="file_example">
     <p>
       this-file-can-be-split-by-the-slashes<br>
       cow-dog-horse-frog-cat<br>
@@ -50,7 +54,7 @@
 
   <p>An example output for line three is shown below</p>
 
-  <!-- <div id="line_split"> style="background-color: rgb(230, 230, 230); width: 300px;"> -->
+
   Line split by delimeter:<br>
   one<br>
   two<br>
@@ -101,8 +105,10 @@ public class App {
       </pre>
   </div>
 
-  <div id="answers_origin" class="flex-container"> <!-- style="overflow-x: scroll;">  -->
+  <div id="answers_origin" class="flex-container">
+
     <!-- Correct order of answers -->
+
     <!-- 
         BufferedReader&nbsp;file
         new&nbsp;FileReader(args[0])
